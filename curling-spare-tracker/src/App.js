@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { supabase } from './supabaseClient';
+import AdminPanel from './components/AdminPanel';
 
 function App() {
   const [spares, setSpares] = useState([]);
@@ -36,6 +37,9 @@ function App() {
   return (
     <div className="App">
       <h1>Curling Spare Tracker</h1>
+
+       <AdminPanel /> {/* ✅ Add this line */}
+
       <ul>
         {spares.map(spare => (
           <li key={spare.id}>
